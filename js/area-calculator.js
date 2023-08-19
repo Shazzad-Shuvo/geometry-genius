@@ -24,3 +24,20 @@ function calculateRectangleArea(){
     const rectangleAreaSpan = document.getElementById('rectangle-area');
     rectangleAreaSpan.innerText = rectangleArea;
 }
+
+function calculateParallelogramArea(){
+    const parallelogramBase = getInputFieldValueById('parallelogram-base');
+    const parallelogramHeight = getInputFieldValueById('parallelogram-height');
+
+    const parallelogramArea = parallelogramBase * parallelogramHeight;
+    const parallelogramAreaSpan = document.getElementById('parallelogram-area');
+    parallelogramAreaSpan.innerText = parallelogramArea;
+}
+
+// common functions/reusable functions
+
+function getInputFieldValueById(inputFieldId){
+    const inputField = document.getElementById(inputFieldId);
+    const inputFieldValue = parseFloat(inputField.value);
+    return inputFieldValue;
+}
