@@ -30,8 +30,19 @@ function calculateParallelogramArea(){
     const parallelogramHeight = getInputFieldValueById('parallelogram-height');
 
     const parallelogramArea = parallelogramBase * parallelogramHeight;
-    const parallelogramAreaSpan = document.getElementById('parallelogram-area');
-    parallelogramAreaSpan.innerText = parallelogramArea;
+
+    // const parallelogramAreaSpan = document.getElementById('parallelogram-area');
+    // parallelogramAreaSpan.innerText = parallelogramArea;
+    setElementInnerText('parallelogram-area', parallelogramArea);
+}
+
+function calculateEllipseArea(){
+    const majorRadius = getInputFieldValueById('ellipse-major-radius');
+    const minorRadius = getInputFieldValueById('ellipse-minor-radius');
+
+    const ellipseArea = Math.PI * majorRadius * minorRadius;
+
+    setElementInnerText('ellipse-area', ellipseArea);
 }
 
 // common functions/reusable functions
@@ -40,4 +51,9 @@ function getInputFieldValueById(inputFieldId){
     const inputField = document.getElementById(inputFieldId);
     const inputFieldValue = parseFloat(inputField.value);
     return inputFieldValue;
+}
+
+function setElementInnerText(elementId, area){
+    const element = document.getElementById(elementId);
+    element.innerText = area;
 }
